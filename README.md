@@ -99,6 +99,10 @@ method will not restore the changes, until you not register the backupers with `
 
 Restores module `name`. If it was modified multiple times, restores to the root, until the `steps` limit is not given.
 
+##### cuculus.drop(name: string)
+
+Drops the cached module from `require`.
+
 ## License
 
 MIT © [Sergey Kamardin](https://github.com/gobwas)
