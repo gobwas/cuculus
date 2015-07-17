@@ -65,22 +65,28 @@ describe('cuculus', function () {
 
 	describe('#restore', function() {
 		it('should restore original value', function() {
-			var stub, spy;
+			var spy;
 
 			// before
-			stub = {};
-			spy = sinon.spy();
+			spyA = sinon.spy();
+			spyB = sinon.spy();
 
 			// when
-			cuculus.modify("fs", function(original, onRestore) {
-				onRestore(spy);
-				return stub;
+			cuculus.modify("fs", function(current, onRestore) {
+				onRestore(spyA);
+				return {};
+			});
+			cuculus.modify("fs", function(current, onRestore) {
+				onRestore(spyB);
+				return {};
 			});
 			cuculus.restore("fs");
 
 			// then
 			expect(require("fs")).equal(fs);
-			expect(spy.callCount).equal(1);
+			expect(spyA.callCount).equal(1);
+			expect(spyB.callCount).equal(1);
+			expect(spyB.calledBefore(spyA)).to.be.true;
 		});
 	});
 });

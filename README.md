@@ -90,10 +90,14 @@ cuculus.restore("fs");
 Complete replace the module named `name` with `stub`. Returns function, that
 simple proxy to `cuculus.restore(name)`.
 
-##### cuculus.modify(name: string, replacer: Function(original: Any, onRestore: Function(fn: Function))) : Function()
+##### cuculus.modify(name: string, replacer: Function(current: Any, onRestore: Function(fn: Function))) : Function()
 
-Modifies original module with `replacer` function. If `replacer` modifies object, then `restore`
+Modifies current module with `replacer` function. If `replacer` modifies object, then `restore`
 method will not restore the changes, until you not register the backupers with `onRestore` function.
+
+##### cuculus.restore(name: string[, steps: number])
+
+Restores module `name`. If it was modified multiple times, restores to the root, until the `steps` limit is not given.
 
 ## License
 
