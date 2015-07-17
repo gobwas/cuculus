@@ -1,6 +1,6 @@
 #  [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 
-> Simpliest require mocking
+> Simplest require mocking
 
 ## Whats up
 
@@ -85,12 +85,12 @@ cuculus.restore("fs");
 
 ## API
 
-### cuculus.replace(name: string, stub: Any) : Function()
+##### cuculus.replace(name: string, stub: Any) : Function()
 
 Complete replace the module named `name` with `stub`. Returns function, that
 simple proxy to `cuculus.restore(name)`.
 
-### cuculus.modify(name: string, replacer: Function(original: Any, onRestore: Function(fn: Function))) : Function()
+##### cuculus.modify(name: string, replacer: Function(original: Any, onRestore: Function(fn: Function))) : Function()
 
 Modifies original module with `replacer` function. If `replacer` modifies object, then `restore`
 method will not restore the changes, until you not register the backupers with `onRestore` function.
