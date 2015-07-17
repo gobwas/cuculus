@@ -1,0 +1,31 @@
+{
+  "name": "cuculus",
+  "version": "0.1.0",
+  "description": "Simplest require mocking",
+  "author": {
+    "name": "Sergey Kamardin",
+    "email": "gobwas@gmail.com",
+    "url": "https://github.com/gobwas"
+  },
+  "repository": "gobwas/cuculus",
+  "license": "MIT",
+  "keywords": [
+    "cuculus",
+    "cuckoo",
+    "cuculus",
+    "stub",
+    "mock",
+    "require",
+    "module"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^3.1.0",
+    "mocha": "^2.2.5",
+    "sinon": "^1.15.4"
+  },
+  "scripts": {
+    "test": "mocha ./test"
+  },
+  "main": "./index.js"
+}
