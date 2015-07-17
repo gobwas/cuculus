@@ -101,7 +101,7 @@ Restores module `name`. If it was modified multiple times, restores to the root,
 
 ##### cuculus.drop(name: string)
 
-Drops the cached module from `require`.
+Drops the cached module from `require`. `name` should be a module name or a full path to the js file.
 
 ## License
 
