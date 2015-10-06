@@ -70,7 +70,7 @@ cuculus.modify("fs", function(fs, onRestore) {
     });
 
     // register restore middleware
-    onRestore.push(stub.restore.bind(stub));
+    onRestore(stub.restore.bind(stub));
 
     return fs;
 });
